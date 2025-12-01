@@ -1,0 +1,218 @@
+/* Index (landing page) */
+.banner {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  background: url(background.jpg);}
+
+@font-face {
+  font-family: 'Encode Sans';
+  src: url('images/EncodeSansCondensed-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.text {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 85px;
+  font-family: Encode Sans;
+  z-index: 10;
+  color: white;
+  filter: blur(1px);
+}
+
+.bottom-left,
+.bottom-right {
+    position: absolute;
+    bottom: 20px;
+    padding: 10px 14px;
+    border-radius: 16px;
+    font-family: 'Encode Sans', sans-serif;
+    font-size: 28px;
+    color: white;
+    text-decoration: none;
+    filter: blur(1px);
+    transition: all 0.3s ease;
+    z-index: 20;
+}
+
+.bottom-left {
+    left: 20px;
+}
+
+.bottom-right {
+    right: 20px;
+}
+
+.bottom-left:hover,
+.bottom-right:hover {
+    filter: blur(0);
+}
+
+/* cards */
+.banner .slider {
+  position: absolute;
+  width: 200px;
+  height: 250px;
+  top: 20%;
+  left: calc(50% - 100px);
+  transform-style: preserve-3d;
+  transform: perspective(1000px) translateY(-50%);
+  animation: autoRun 20s linear infinite;
+}
+
+/* Animation  */
+@keyframes autoRun {
+  from {
+    transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+  }
+
+  to {
+    transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+  }
+
+}
+
+.banner .slider .item {
+  position: absolute;
+  inset: 0 0 0;
+  transform:
+    rotateY(calc((var(--position) - 1) * (360deg / var(--quantity)))) translateZ(400px);
+}
+
+.banner .slider .item img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+}
+
+/* End of page 1 */
+
+/*  About me - page 2*/
+
+.aboutpage {
+  background-color: rgb(243, 186, 213);
+  color: black;
+  display: grid;
+  grid-template-columns: 55% 45%;
+  gap: 3vw;
+  padding: 4vw;
+  font-family: Cambria, serif;
+}
+
+.button1 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: black;
+    color: rgb(255, 247, 247) ;
+    padding: 6px 14px;
+    border-radius: 16px;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.button1:hover {
+    background-color: rgb(168, 61, 129);
+    color: rgb(255, 255, 255) ;
+}
+
+
+/*  structure for columns */
+.leftcol,
+.rightcol {
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+}
+
+.leftcol h1 {
+  font-size: 10vw;
+  font-family: Encode sans;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.leftcol h3,
+.rightcol h3 {
+  font-size: 3vw;
+  font-family: Encode sans;
+  border-top: 2px solid black;
+  padding-top: 1vw;
+  margin-top: 2vw;
+  font-size: 4vw;
+}
+
+/* Skills section layout */
+.skillsgrid {
+  font-size: 1.5vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2vw;
+  row-gap: 0.6vw;
+}
+
+/* Image styling */
+.profileimg {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 1vw;
+}
+
+/* Text styling */
+.aboutpage p {
+  font-size: 1.5vw;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Explore me page-3 */
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  padding: 100px;
+
+  height: 150vh;
+  background: url(images/background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  place-items: center;
+}
+
+.grid-3  {
+  display: flex;
+  flex-direction: column; 
+  gap: 60px;
+  padding: 120px 40px;
+  min-height: 100vh;
+  background: url(background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  justify-content: center;
+}
+
+.autoBLur {
+  font-family: Encode sans;
+  font-size: 100px;
+  color: white;
+  animation: autoBLurAnimation linear both;
+  animation-timeline: view(20% auto);
+}
+
+@keyframes autoBLurAnimation {
+  0%, 100% { filter: blur(30px); }
+  25%, 55% { filter: blur(0); }
+}
